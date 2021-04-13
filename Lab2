@@ -1,0 +1,120 @@
+#include <iostream>
+#include<cmath>
+#include<limits>
+
+using namespace std;
+
+int main()
+{
+double g = 9.81;
+double pi = 3.1416;
+double m=0;
+double alpha=0;
+double f0=0;
+double u =0;
+double cos1 =0;
+double a=0;
+double rad=0;
+setlocale(LC_ALL,"Rus");
+char b;
+
+do
+{
+cout <<"Введи массу(кг) "; cin>>m;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (m<=0)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while(m<=0);
+
+
+
+do
+{
+cout <<"Введи градус угла "; cin>>alpha;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (alpha <0 || alpha >90)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while(alpha<0 || alpha >90||!alpha );
+
+do
+{
+cout <<"Введи силу "; cin>>f0;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (f0<0)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while(f0<0);
+
+do
+{
+cout <<"Введи коефицент трения "; cin>>u;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (u<=0 || u >1)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while(u<=0 || u >1||!u);
+a= f0==0 ? b :(f0 * cos (alpha*pi/180) - u * m * g * sin (alpha*pi/180))/m;
+
+if (a==b)
+{
+cout <<"Тело неподвижно"<<endl;
+}
+else
+{
+cout<< "Ускорение равно = "<< a ;
+}
+}
