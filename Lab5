@@ -1,0 +1,70 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main()
+{
+setlocale(LC_ALL, "Rus");
+int lng,high;
+int **matr;
+matr= new int *[high];
+do
+{
+cout <<"Введи размер матрицы ";
+cin>>high;
+cin >>lng;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (high<=0|| lng<=0)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while(high<=0 || lng<=0|| !lng||!high);
+
+for (int i=0; i<high; i++)
+{
+matr[i]=new int [lng];
+}
+
+srand(time(0));
+cout<<"Начальная матрица"<<endl;
+for(int j=0; j< high; j++)
+{
+for( int l=0; l< lng; l++)
+{
+matr[j][l]=rand();
+
+cout<<matr[j][l]<<" ";
+
+}
+cout <<"/"<<endl;
+
+}
+
+cout<<" "<<endl;
+cout<< "Транспонированная матрица"<<endl;
+cout<<" "<<endl;
+
+for(int l=0; l< high; l++)
+{
+for( int j=0; j< lng; j++)
+{
+
+cout<< matr[j][l]<<" ";
+
+}
+cout <<"/"<<endl;
+}
+
+}
