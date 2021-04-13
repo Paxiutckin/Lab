@@ -1,0 +1,87 @@
+#include <iostream>
+#include <cmath>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+int *mas,n,x,ran,vibor,summa,i,proiz;
+double rez, result;
+setlocale(LC_ALL, "Rus");
+do
+{
+cout <<"Введи длину массива "; cin>> n;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+}
+else
+if (n<0)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while( n<0|| !n);
+
+mas= new int[n];
+do
+{
+cout <<"Заполнить елементы массива вручную (Нажмите 1) или автоматически случайно(Нажмите 2)? "; cin>> vibor;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+cin.ignore ();
+fflush(stdin);
+}
+else
+if (vibor<1 || vibor >2)
+{
+
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+
+}
+
+}while( vibor<1 || vibor >2);
+
+if (vibor ==1)
+{
+for (int i=1; i<n+1; i++)
+{
+do { cin>> mas[i] ;
+if (cin.fail())
+{
+cout<<"Введи корректные данные "<<endl;
+cin.clear();
+fflush(stdin);
+}
+
+}while (!mas[i]);
+
+summa =summa + (mas[i]*mas[i]);}
+
+
+}
+else {
+srand(time(NULL));
+
+for (int i=1; i<n+1; i++)
+{mas[i]=rand();
+summa =summa + mas[i]*mas[i];
+
+
+}
+}
+rez = ((double)1/n*summa);
+result= sqrt(rez);
+cout<<result<<endl;
+}
