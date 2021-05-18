@@ -1,0 +1,65 @@
+#include <iostream>
+
+using namespace std;
+
+
+double res;
+
+class vec
+{
+ public:
+
+double  x,y,z;
+
+
+
+};
+
+int main()
+
+{
+
+setlocale(LC_ALL,"Rus");
+
+    double n,res;
+
+    vec one;
+
+do
+    {
+    cout <<"Введи координаты вектора"<<endl;
+    cin>>one.x;
+    cin>>one.y;
+    cin>>one.z;
+    if (cin.fail())
+        {
+        cout<<"Введи корректные данные с самого начала "<<endl;
+        cin.clear();
+        cin.ignore ();
+        fflush(stdin);
+        }
+
+}while(!one.x || !one.y || !one.z);
+
+    vec two;
+    do
+    {
+    cout <<"Введи координаты вектора"<<endl;
+    cin>>two.x;
+    cin>>two.y;
+    cin>>two.z;
+    if (cin.fail())
+        {
+        cout<<"Введи корректные данные с самого начала "<<endl;
+        cin.clear();
+        cin.ignore ();
+        fflush(stdin);
+        }
+
+}while(!two.x || !two.y|| !one.z);
+
+res=one.x*two.x+one.y*two.y+one.z*two.z;
+
+cout<<res<<endl;
+
+}
