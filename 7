@@ -1,0 +1,64 @@
+#include <iostream>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <locale>
+
+using namespace std;
+
+class Yra
+
+{
+  public:
+  double a,b,c;
+  int n;
+};
+
+int main()
+
+{
+
+setlocale(LC_ALL, "Rus");
+double x,alpha;
+double Pi = acos(-1.0);
+
+
+Yra one;
+do
+
+{
+
+
+cout «"Введи значение а,b,c,n = "«endl;
+
+  cin»one.a;
+  cin»one.b;
+  cin»one.c;
+  cin»one.n;
+  
+  if (cin.fail())
+    {
+    cout«"Введи корректные данные с самого начала "«endl;
+    cin.clear();
+    cin.ignore ();
+    fflush(stdin);
+    }
+
+
+
+  }while(!one.a ||!one.b||!one.c||!one.n );
+
+if (fabs(one.c) > sqrt(one.a*one.a +one.b*one.b) || one.a*one.a + one.b*one.b == 0 )
+  {
+  cout«"Уравнение не имеет решений \n";
+  }
+  else
+    {
+    alpha = atan2(one.b,one.a);
+    x = pow((-1.0),one.n)*asin(one.c/sqrt(one.a*one.a + one.b*one.b)) + one.n*Pi - atan2(one.b,one.a);
+    cout«"x = "«x;
+    }
+
+
+
+}
